@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">My Application</string>
-    <string name="okay">確認</string>
+    <string name="please_enter">Please enter a number</string>
+    <string name="bing">Bingo</string>
+    <string name="big">Bigger</string>
+    <string name="reminder">Message</string>
+    <string name="sma">Smaller</string>
+
 </resources>

@@ -12,34 +12,34 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
 
     val se = SecretNumber()
-
+    val TAG = "MainActivity"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        Log.d("MainActivity", "secret: " + se.secret)
+        Log.d(TAG, "secret: " + se.secret)
 
     }
 
     fun check(view: View) {
+
         val n: Int = input_num.text.toString().toInt()
 
-        Log.d("MainActivity", "number: " + n)
+        Log.d(TAG, "number: " + n)
 
         val diff = se.validate(n)
-        var message = "Bingo"
+        var message = getString(R.string.bing)
 
         if (diff < 0) {
-
-            message = "Bigger"
+            message = getString(R.string.big)
         } else if (diff > 0) {
-            message = "Smaller"
+            message = getString(R.string.sma)
         }
 //        Toast.makeText(this,message,Toast.LENGTH_LONG).show()
 
         AlertDialog.Builder(this)
-            .setTitle("Message")
+            .setTitle(getString(R.string.reminder))
             .setMessage(message)
-            .setPositiveButton("OK",null)
+            .setPositiveButton("OK", null)
             .show()
     }
 }

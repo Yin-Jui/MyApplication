@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">猜數字</string>
+    <string name="big">再大一點</string>
+    <string name="bing">恭喜答對!</string>
+    <string name="please_enter">請輸入</string>
+    <string name="reminder">提示信息</string>
+    <string name="sma">再小一點</string>
+</resources>
