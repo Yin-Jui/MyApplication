@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -33,6 +34,14 @@ class MaterialActivity : AppCompatActivity() {
         }
         RecordActivity.setText(se.count.toString())
         Log.d(TAG, "OnCreate" + se.secret)
+        getSharedPreferences("guess", Context.MODE_PRIVATE)
+
+        val count = getSharedPreferences("guess", Context.MODE_PRIVATE)
+            .getInt("REC_COUNTER", 0)
+        val nick = getSharedPreferences("guess", Context.MODE_PRIVATE)
+            .getString("REC_NICKNAME", null)
+
+        Log.d(TAG, "data:  " + count + "/" + nick)
 
     }
 
@@ -60,7 +69,7 @@ class MaterialActivity : AppCompatActivity() {
                 if (diff == 0) {
 
                     val intent = Intent(this, com.example.myapplication.RecordActivity::class.java)
-                    intent.putExtra("COUNTER",se.count)
+                    intent.putExtra("COUNTER", se.count)
                     startActivity(intent)
                 }
 
