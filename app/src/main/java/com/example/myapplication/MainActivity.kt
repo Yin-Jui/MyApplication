@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -38,7 +39,13 @@ class MainActivity : AppCompatActivity() {
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.reminder))
             .setMessage(message)
-            .setPositiveButton("OK", null)
+            .setPositiveButton("OK", {dialog, which ->
+
+                if(diff==0){
+                    val intent = Intent(this, RecordActivity::class.java)
+                    startActivity((intent))
+                }
+            })
             .show()
     }
 

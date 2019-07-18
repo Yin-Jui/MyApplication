@@ -6,5 +6,8 @@
     <string name="reminder">Message</string>
     <string name="sma">Smaller</string>
     <string name="title_activity_material">MaterialActivity</string>
+    <string name="replay">Replay game</string>
+    <string name="sure">Are you sure?</string>
+    <string name="cancel">Cancel</string>
 
 </resources>
