@@ -65,14 +65,13 @@ class MaterialActivity : AppCompatActivity() {
         AlertDialog.Builder(this)
             .setTitle(getString(R.string.reminder))
             .setMessage(message)
-            .setPositiveButton("OK", { dialog, which ->
+            .setPositiveButton(getString(R.string.ok), { dialog, which ->
                 if (diff == 0) {
 
                     val intent = Intent(this, com.example.myapplication.RecordActivity::class.java)
                     intent.putExtra("COUNTER", se.count)
                     startActivity(intent)
                 }
-
             })
             .show()
     }
