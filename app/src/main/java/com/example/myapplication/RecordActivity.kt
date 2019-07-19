@@ -1,6 +1,8 @@
 package com.example.myapplication
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -24,6 +26,10 @@ class RecordActivity : AppCompatActivity() {
                 .putInt("REC_COUNTER", count)
                 .putString("REC_NICKNAME", nick)
                 .apply()
+            val intent = Intent()
+            intent.putExtra("NICK",nick)
+            setResult(Activity.RESULT_OK,intent)
+            finish()
         }
         getSharedPreferences("guess", Context.MODE_PRIVATE)
 
